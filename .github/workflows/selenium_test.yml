@@ -23,5 +23,6 @@ jobs:
           python -m venv .
           source ./bin/activate
           pip install selenium
+          pip install pytest
       - name: Selenium run
         run: python3 test_googlesearch.py
