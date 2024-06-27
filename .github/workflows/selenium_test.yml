@@ -1,0 +1,21 @@
+name: Selenium
+
+on:
+  push:
+
+jobs:
+  test-start:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Chrome install
+        run: |
+          sudo wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+          sudo apt update
+          sudo apt install google-chrome-stable
+      - name: pip install
+        run: |
+          pip install selenium
+      - name: Selenium run
+        run: python3 test_googlesearch.py
