@@ -24,4 +24,5 @@ jobs:
           source ./bin/activate
           pip install selenium
           pip install pytest
+          pip install chromedriver-binary-auto
           pytest test_googlesearch.py
