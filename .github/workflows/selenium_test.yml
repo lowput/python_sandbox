@@ -26,11 +26,10 @@ jobs:
           pip install pytest
           pip install chromedriver-binary
           pip install pytest-html
-          pytest test_googlesearch.py --html=results.html
+          pytest test_googlesearch.py --html=results/index.html
       - name: Save Result
         uses: actions/upload-artifact@v4
         with:
-          name: pytest_results.html
-          path: results.html
-          compression-level: 0
+          name: pytest_results
+          path: results
 
